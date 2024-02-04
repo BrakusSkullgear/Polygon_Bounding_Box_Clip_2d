@@ -29,21 +29,20 @@ int main()
 		// Form triangles from the clipped points.
 		int result_tri_count = clipper.get_triangle_count();
 
-		// Get results as triangles.
+		// Go through triangles.
 		for (int t = 0; t < result_tri_count; ++t)
 		{
-			// Get given quad.
+			// Get current triangle.
 			std::array<ColorVertex2d, 3> clip_tri = clipper.get_triangle(t);
 
+			// Print.
 			std::cout << "Triangle " << t << ":\n";
-
-			// Print points.
 			for (int i = 0; i < 3; ++i)
 			{
 				std::cout << "    position: " << clip_tri[i].v_position << " color: " << clip_tri[i].v_color << "\n";
 			} // End print.
 
-		} // End get_results as quads.
+		} // End go through.
 
 	} // End results.
 
